@@ -1,0 +1,32 @@
+# =============================================================================
+# Opencode Runtime Requirements
+# =============================================================================
+# This file documents what is needed to run opencode with this configuration.
+# It is NOT a pip requirements file -- it is a reference for setup.
+
+# ---------------------------------------------------------------------------
+# Runtime
+# ---------------------------------------------------------------------------
+Node.js >= 18          # Required by opencode and all MCP servers (npx)
+npm                    # Bundled with Node.js (or use pnpm/bun as alternative)
+
+# ---------------------------------------------------------------------------
+# Dependencies (installed via `npm install` in this directory)
+# ---------------------------------------------------------------------------
+@opencode-ai/plugin    # Core plugin used by opencode
+shadcn (dev)           # shadcn/ui CLI (used as local MCP server)
+
+# ---------------------------------------------------------------------------
+# Environment Variables (required by opencode.jsonc)
+# ---------------------------------------------------------------------------
+CONTEXT7_PERSONAL_ACCESS_TOKEN   # Context7 MCP - get at https://context7.com/dashboard
+GITHUB_PERSONAL_ACCESS_TOKEN     # GitHub MCP - get at https://github.com/settings/tokens
+
+# ---------------------------------------------------------------------------
+# Quick Start
+# ---------------------------------------------------------------------------
+# 1. Install Node.js >= 18 from https://nodejs.org
+# 2. cd into this directory and run:
+#      npm install
+# 3. Set the env vars above (see README for platform-specific instructions)
+# 4. Run opencode from the workspace root
