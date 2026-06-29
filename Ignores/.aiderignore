@@ -1,0 +1,65 @@
+# SEGURANÇA E CREDENCIAIS
+.env
+.env.local
+.env.production
+.env.development
+*.pem
+*.key
+credentials.json
+config/secrets.yml
+
+# DEPENDÊNCIAS E BUILDS
+node_modules/
+target/
+build/
+dist/
+.next/
+.nuxt/
+.cache/
+mvnw*
+gradlew*
+
+# LOCK FILES (Economia de Tokens)
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+bun.lockb
+
+# ASSETS PESADOS
+*.png
+*.jpg
+*.jpeg
+*.mp4
+*.pdf
+*.svg
+*.ico
+*.gif
+
+# DADOS E LOGS
+*.log
+*.csv
+*.sqlite
+
+# ARQUIVOS TEMPORÁRIOS
+*.tmp
+temp/
+
+# CONFIGURAÇÕES DE IDEs
+.idea/
+.vscode/
+.settings/
+.project
+.classpath
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
+# LINGUAGENS (Python, etc)
+__pycache__/
+.venv/
+venv/
+
+# PASTAS PESADAS DA RAIZ
+/data/
+/backups/

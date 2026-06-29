@@ -1,0 +1,40 @@
+# SEGURANÇA E CREDENCIAIS
+.env
+.env.local
+.env.production
+.env.development
+*.pem
+*.key
+credentials.json
+config/secrets.yml
+
+# PASTA DE DEPENDÊNCIAS
+node_modules/
+
+# BUILDS E COMPILAÇÃO (Java / Spring / Frontend)
+target/
+build/
+.gradle/
+dist/
+.next/
+.nuxt/
+.cache/
+
+# CONFIGURAÇÕES LOCAIS DE IDEs
+.idea/
+.vscode/
+.settings/
+.project
+.classpath
+*.suo
+
+# ARQUIVOS TEMPORÁRIOS
+*.tmp
+temp/
+
+# AMBIENTES VIRTUAIS E LOGS
+*.log
+__pycache__/
+.venv/
+venv/
+.wshistory/
