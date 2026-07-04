@@ -85,6 +85,15 @@
       "installedAt": "2026-06-17T01:58:39.603Z",
       "updatedAt": "2026-06-17T01:58:39.603Z"
     },
+    "drawio-skill": {
+      "source": "Agents365-ai/drawio-skill",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/Agents365-ai/drawio-skill.git",
+      "skillPath": "skills/drawio-skill/SKILL.md",
+      "skillFolderHash": "fa2175136f4d25ee698689e5721fcf5f5ac4c91e",
+      "installedAt": "2026-06-22T21:36:38.586Z",
+      "updatedAt": "2026-06-22T21:36:38.586Z"
+    },
     "create-readme": {
       "source": "github/awesome-copilot",
       "sourceType": "github",
@@ -93,6 +102,51 @@
       "skillFolderHash": "f65537a3461b663121fe195697979c17a8004ea5",
       "installedAt": "2026-06-17T05:00:58.554Z",
       "updatedAt": "2026-06-17T05:00:58.554Z"
+    },
+        "security-review": {
+      "source": "affaan-m/ECC",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/affaan-m/ECC.git",
+      "skillPath": "skills/security-review/SKILL.md",
+      "skillFolderHash": "075277c4cc7b79e0d57e5c3f3e96c1809326bb94",
+      "installedAt": "2026-07-04T22:07:48.163Z",
+      "updatedAt": "2026-07-04T22:07:48.163Z"
+    },
+    "backend-patterns": {
+      "source": "affaan-m/ECC",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/affaan-m/ECC.git",
+      "skillPath": "skills/backend-patterns/SKILL.md",
+      "skillFolderHash": "94ae4c73f55ace2b800fdda614d90a88e7469b1d",
+      "installedAt": "2026-07-04T22:09:24.754Z",
+      "updatedAt": "2026-07-04T22:09:24.754Z"
+    },
+    "api-design": {
+      "source": "affaan-m/ECC",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/affaan-m/ECC.git",
+      "skillPath": "skills/api-design/SKILL.md",
+      "skillFolderHash": "baad1406037af3221fae0e6d4c5b113def93f5c3",
+      "installedAt": "2026-07-04T22:10:48.840Z",
+      "updatedAt": "2026-07-04T22:10:48.840Z"
+    },
+    "coding-standards": {
+      "source": "affaan-m/ECC",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/affaan-m/ECC.git",
+      "skillPath": "skills/coding-standards/SKILL.md",
+      "skillFolderHash": "a9e2e0a10071d73d094194f6d689feecadab80f2",
+      "installedAt": "2026-07-04T22:10:48.843Z",
+      "updatedAt": "2026-07-04T22:10:48.843Z"
+    },
+    "frontend-patterns": {
+      "source": "affaan-m/ECC",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/affaan-m/ECC.git",
+      "skillPath": "skills/frontend-patterns/SKILL.md",
+      "skillFolderHash": "259b80543d33a8bf8f928f177839b93c48628ab2",
+      "installedAt": "2026-07-04T22:10:48.844Z",
+      "updatedAt": "2026-07-04T22:10:48.844Z"
     }
   },
   "dismissed": {

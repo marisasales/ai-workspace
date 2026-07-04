@@ -13,18 +13,24 @@ This repository contains a portable, cross-platform configuration structure shar
 ├── .agents/                          # Shared AI agent configuration
 │   ├── .skill-lock.json              # Skill installation manifest
 │   └── skills/                       # Installed skills
-│       ├── context7-mcp/             #   Context7 documentation MCP skill
-│       ├── conventional-branch/      #   Conventional Branch naming
-│       ├── create-readme/            #   README generation
-│       ├── find-skills/              #   Skill discovery
-│       ├── frontend-design/          #   UI component design
-│       ├── gitmoji-commit/           #   Gitmoji + Conventional Commits
-│       ├── java-springboot/          #   Spring Boot best practices
-│       ├── mcp-builder/              #   MCP server creation guide
-│       ├── project-architect/        #   Project scaffolding
-│       ├── project-spec/             #   Project specification (pt-BR)
-│       ├── python-patterns/          #   Python best practices
-│       └── skill-creator/            #   Skill authoring toolkit
+│       ├── api-design/              #   REST API design patterns
+│       ├── backend-patterns/        #   Backend architecture patterns
+│       ├── coding-standards/        #   Cross-project coding conventions
+│       ├── context7-mcp/            #   Context7 documentation MCP skill
+│       ├── conventional-branch/     #   Conventional Branch naming
+│       ├── create-readme/           #   README generation
+│       ├── drawio-skill/            #   Diagram generation (draw.io)
+│       ├── find-skills/             #   Skill discovery
+│       ├── frontend-design/         #   UI component design
+│       ├── frontend-patterns/       #   Frontend development patterns
+│       ├── gitmoji-commit/          #   Gitmoji + Conventional Commits
+│       ├── java-springboot/         #   Spring Boot best practices
+│       ├── mcp-builder/             #   MCP server creation guide
+│       ├── project-architect/       #   Project scaffolding
+│       ├── project-spec/            #   Project specification (pt-BR)
+│       ├── python-patterns/         #   Python best practices
+│       ├── security-review/         #   Security review checklist
+│       └── skill-creator/           #   Skill authoring toolkit (empty)
 │
 ├── .config/
 │   ├── Code/User/prompts/            # VS Code custom agent prompts
@@ -41,11 +47,17 @@ This repository contains a portable, cross-platform configuration structure shar
 │       ├── package.json              #   Node dependencies
 │       ├── requirements.txt          #   Runtime requirements reference
 │       ├── .gitignore                #   Git ignore for this folder
-│       └── agents/                   #   Opencode agent definitions
-│           ├── ask.md
-│           ├── review.md
-│           ├── ship.md
-│           └── test.md
+│       ├── agents/                   #   Opencode agent definitions
+│       │   ├── ask.md
+│       │   ├── review.md
+│       │   ├── ship.md
+│       │   └── test.md
+│       └── command/                  #   Opencode command definitions
+│           ├── build.md              #   Build command
+│           ├── commit.md             #   Git commit command
+│           ├── refactor-clean.md     #   Refactor/cleanup command
+│           ├── scan-security.md      #   Security review command
+│           └── update-docs.md        #   Update documentation command
 │
 ├── Ignores/                          # Ignore files per AI tool
 │   ├── .gitignore                    #   Git
@@ -219,6 +231,7 @@ GitHub API integration — list repos, create issues, manage PRs, search code, a
 |-----------------------------|------------------------------------------|
 | `.agents/skills/`           | All installed AI agent skills            |
 | `.config/opencode/agents/`  | Opencode agent definitions               |
+| `.config/opencode/command/` | Opencode command definitions             |
 | `.config/Code/User/prompts/`| VS Code custom agent prompts             |
 | `Ignores/`                  | Tool-specific ignore files               |
 
