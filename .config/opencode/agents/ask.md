@@ -1,7 +1,6 @@
 ---
 description: Answers technical questions, explains concepts, and clarifies architecture without modifying files.
 mode: subagent
-model: default
 temperature: 0.2
 tools:
   write: false

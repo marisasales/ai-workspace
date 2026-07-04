@@ -1,7 +1,6 @@
 ---
 description: Reviews code for quality, security, and architectural best practices.
 mode: primary
-model: default
 temperature: 0.2
 tools:
   write: false

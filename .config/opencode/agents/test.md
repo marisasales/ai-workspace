@@ -1,7 +1,6 @@
 ---
 description: Generates robust unit and integration tests, identifying logic flaws and edge cases.
 mode: primary
-model: default
 temperature: 0.2
 tools:
   write: true

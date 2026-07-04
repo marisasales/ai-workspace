@@ -1,7 +1,6 @@
 ---
 description: Configures Docker environments, CI/CD pipelines, and local automation scripts.
 mode: primary
-model: default
 temperature: 0.1
 tools:
   write: true
