@@ -39,6 +39,17 @@ To save output tokens and increase execution speed, all conversational overhead 
 
 ---
 
-## 3. Continuous Self-Correction & Workspace Adaptation
+## 3. Data Safety & Critical Operations Guardrails
+
+### 3.1 Database & State Destruction Prohibitions
+* **Zero Destructive Actions:** The agent is strictly prohibited from executing commands or writing code that drops tables, truncates databases, or triggers mass deletions (`DELETE` without restrictive `WHERE` clauses) unless explicitly ordered by the user in the current turn.
+* **Migration Safeguards:** Do not run database migrations, schema alterations, or destructive CLI commands (e.g., `db:drop`, `prisma migrate reset`, `flask db downgrade`) automatically. 
+* **Exploratory Queries Only:** When debugging database states, prioritize read-only operations (`SELECT`) and restrict output payloads using explicit `LIMIT` clauses to avoid token inflation and memory strain.
+
+### 3.2 Explicit Authorization Protocol
+* **Intercept Before Destruction:** If a task implicitly requires overwriting critical structural files, clearing cache stores, or resetting local database containers, the agent must halt execution and explicitly request human validation (e.g., "Do you authorize resetting the local database?").
+
+## 4. Continuous Self-Correction & Workspace Adaptation
+
 * **Post-Mortem Analysis:** At the conclusion of complex multi-step workflows or on tool execution failure, analyze the iteration sequence to identify token-wasting patterns (such as circular search loops or redundant file checking).
 * **Dynamic Rule Append:** Update this `AGENTS.md` file dynamically to hardcode fixes against discovered token inflation or recursive behavior patterns.

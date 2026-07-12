@@ -3,22 +3,25 @@
   "skills": {
     "gitmoji-commit": {
       "source": "local",
-  	  "sourceType": "local",
-  	  "skillPath": "skills/gitmoji-commit/SKILL.md",
-  	  "installedAt": "2026-06-17T01:20:35.988Z",
+      "sourceType": "local",
+      "skillPath": "skills/gitmoji-commit/SKILL.md"
     },
     "project-architect": {
       "source": "local",
-  	  "sourceType": "local",
-  	  "skillPath": "skills/project-architect/SKILL.md",
-  	  "installedAt": "2026-06-19T18:55:35.988Z",
+      "sourceType": "local",
+      "skillPath": "skills/project-architect/SKILL.md"
     },
     "project-spec": {
-    	  "source": "local",
-    	  "sourceType": "local",
-    	  "sourceUrl": ".",
-      "skillPath": "skills/project-spec/SKILL.md",
-      "installedAt": "2026-06-26T21:30:49.385Z"
+      "source": "local",
+      "sourceType": "local",
+      "sourceUrl": ".",
+      "skillPath": "skills/project-spec/SKILL.md"
+    },
+    "versioning-guide": {
+      "source": "local",
+      "sourceType": "local",
+      "sourceUrl": ".",
+      "skillPath": "skills/versioning-guide/SKILL.md"
     },
     "find-skills": {
       "source": "vercel-labs/skills",
@@ -103,7 +106,7 @@
       "installedAt": "2026-06-17T05:00:58.554Z",
       "updatedAt": "2026-06-17T05:00:58.554Z"
     },
-        "security-review": {
+    "security-review": {
       "source": "affaan-m/ECC",
       "sourceType": "github",
       "sourceUrl": "https://github.com/affaan-m/ECC.git",

@@ -1,0 +1,40 @@
+{
+  "skill_name": "versioning-guide",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "I just fixed a bug where the app would crash when the user typed special characters in the search bar. Current version is 2.3.1. What should the next version be?",
+      "expected_output": "Explains this is a PATCH-level fix and suggests version 2.3.2",
+      "files": [],
+      "expectations": [
+        "Suggests version 2.3.2",
+        "Identifies PATCH-level increment",
+        "Explains backward compatibility"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "We're about to release a big update to our project. We added user profiles, a notification system, and also changed the database schema in a way that old data files won't load anymore. Current version is 1.4.0. What version should we ship?",
+      "expected_output": "Identifies the breaking change (database schema incompatibility), explains MAJOR bump is needed, and suggests version 2.0.0",
+      "files": [],
+      "expectations": [
+        "Suggests version 2.0.0",
+        "Identifies breaking change",
+        "Explains MAJOR bump rule",
+        "Resets MINOR and PATCH to 0"
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "My project is at version 0.8.3. I added three new features (export to PDF, dark mode, keyboard shortcuts) and fixed two crashes. No breaking changes though since we're still in early development. What's the right call here?",
+      "expected_output": "Explains pre-1.0 conventions (0.x.x), identifies that new features warrant a MINOR bump despite early stage, and suggests version 0.9.0",
+      "files": [],
+      "expectations": [
+        "Suggests version 0.9.0",
+        "Identifies MINOR increment for features",
+        "Mentions pre-1.0 conventions",
+        "Resets PATCH to 0"
+      ]
+    }
+  ]
+}

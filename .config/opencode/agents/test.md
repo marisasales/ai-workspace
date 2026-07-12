@@ -1,11 +1,21 @@
 ---
 description: Generates robust unit and integration tests, identifying logic flaws and edge cases.
-mode: primary
+mode: subagent
 temperature: 0.2
 tools:
   write: true
   edit: true
   bash: false
+permission:
+  doom_loop: ask
+  question: deny
+  plan_enter: deny
+  plan_exit: deny
+  read:
+    "*.env": ask
+    "*.env.*": ask
+    "*.env.example": allow
+  bash: deny
 ---
 
 Act as a QA and Test Automation Engineer. Generate fast, isolated, and deterministic test configurations.

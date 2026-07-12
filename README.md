@@ -30,7 +30,8 @@ This repository contains a portable, cross-platform configuration structure shar
 │       ├── project-spec/            #   Project specification (pt-BR)
 │       ├── python-patterns/         #   Python best practices
 │       ├── security-review/         #   Security review checklist
-│       └── skill-creator/           #   Skill authoring toolkit (empty)
+│       ├── skill-creator/           #   Skill authoring toolkit
+│       └── versioning-guide/        #   Semantic versioning decisions
 │
 ├── .config/
 │   ├── Code/User/prompts/            # VS Code custom agent prompts
@@ -54,10 +55,10 @@ This repository contains a portable, cross-platform configuration structure shar
 │       │   └── test.md
 │       └── command/                  #   Opencode command definitions
 │           ├── build.md              #   Build command
-│           ├── commit.md             #   Git commit command
-│           ├── refactor-clean.md     #   Refactor/cleanup command
-│           ├── scan-security.md      #   Security review command
-│           └── update-docs.md        #   Update documentation command
+│           ├── commit.md             #   Git commit command (gitmoji)
+│           ├── refactor-clean.md     #   Dead code removal & consolidation
+│           ├── scan-security.md      #   OWASP security review
+│           └── update-docs.md        #   Documentation sync
 │
 ├── Ignores/                          # Ignore files per AI tool
 │   ├── .gitignore                    #   Git
@@ -78,14 +79,14 @@ This repository contains a portable, cross-platform configuration structure shar
 
 Each AI tool reads a specific ignore file. Pick the one you need and copy it to your project root:
 
-| Tool              | Ignore File         | Copy To            |
-|-------------------|---------------------|--------------------|
-| Git               | `.gitignore`        | `.gitignore`       |
-| Cursor            | `.cursorignore`     | `.cursorignore`    |
-| GitHub Copilot    | `.copilotignore`    | `.copilotignore`   |
-| Gemini CLI        | `.geminiignore`     | `.geminiignore`    |
-| Aider             | `.aiderignore`      | `.aiderignore`     |
-| Generic AI agent  | `.agentignore`      | `.agentignore`     |
+| Tool              | Ignore File         |
+|-------------------|---------------------|
+| Git               | `.gitignore`        |
+| Cursor            | `.cursorignore`     |
+| GitHub Copilot    | `.copilotignore`    |
+| Gemini CLI        | `.geminiignore`     |
+| Aider             | `.aiderignore`      |
+| Generic AI agent  | `.agentignore`      |
 
 > **Linux/macOS:** These files start with a dot — they are hidden. Use `ls -a` in the terminal or enable **Show Hidden Files** in your file manager to see them. On Windows they are visible by default in most editors.
 

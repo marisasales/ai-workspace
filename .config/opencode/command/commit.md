@@ -3,4 +3,4 @@ description: Git commits
 agent: build
 ---
 
-Commit the changes using the gitmoji-commit skill
+Do the commits of the changes using the gitmoji-commit skill

@@ -1,11 +1,22 @@
 ---
 description: Reviews code for quality, security, and architectural best practices.
-mode: primary
+mode: subagent
 temperature: 0.2
 tools:
   write: false
   edit: false
   bash: false
+permission:
+  doom_loop: ask
+  question: deny
+  plan_enter: deny
+  plan_exit: deny
+  read:
+    "*.env": ask
+    "*.env.*": ask
+    "*.env.example": allow
+  edit: deny
+  bash: deny
 ---
 
 Act as a Senior Code Reviewer. Audit codebase blocks for quality, performance, and security flaws.
