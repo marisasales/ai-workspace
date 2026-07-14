@@ -13,8 +13,8 @@ npm                    # Bundled with Node.js (or use pnpm/bun as alternative)
 # ---------------------------------------------------------------------------
 # Dependencies (installed via `npm install` in this directory)
 # ---------------------------------------------------------------------------
-@opencode-ai/plugin    # Core plugin used by opencode
-shadcn (dev)           # shadcn/ui CLI (used as local MCP server)
+@opencode-ai/plugin@1.17.3
+shadcn@4.11.0 (dev)
 
 # ---------------------------------------------------------------------------
 # Environment Variables (required by opencode.jsonc)
