@@ -150,6 +150,96 @@
       "skillFolderHash": "259b80543d33a8bf8f928f177839b93c48628ab2",
       "installedAt": "2026-07-04T22:10:48.844Z",
       "updatedAt": "2026-07-04T22:10:48.844Z"
+    },
+    "docker-patterns": {
+      "source": "affaan-m/ECC",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/affaan-m/ECC.git",
+      "skillPath": "skills/docker-patterns/SKILL.md",
+      "skillFolderHash": "8e65f9020a84baafc7a2eb7886aeb090df2047cf",
+      "installedAt": "2026-07-14T19:33:36.169Z",
+      "updatedAt": "2026-07-14T19:33:36.169Z"
+    },
+    "error-handling": {
+      "source": "affaan-m/ECC",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/affaan-m/ECC.git",
+      "skillPath": "skills/error-handling/SKILL.md",
+      "skillFolderHash": "05c7f5263cb0e46961cff01827b234e9a3f83dc0",
+      "installedAt": "2026-07-14T19:33:36.171Z",
+      "updatedAt": "2026-07-14T19:33:36.171Z"
+    },
+    "jpa-patterns": {
+      "source": "affaan-m/ECC",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/affaan-m/ECC.git",
+      "skillPath": "skills/jpa-patterns/SKILL.md",
+      "skillFolderHash": "343225fc1e5e77c89ec76ee7e2f64c5256e4ff2c",
+      "installedAt": "2026-07-14T19:33:36.173Z",
+      "updatedAt": "2026-07-14T19:33:36.173Z"
+    },
+    "postgres-patterns": {
+      "source": "affaan-m/ECC",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/affaan-m/ECC.git",
+      "skillPath": "skills/postgres-patterns/SKILL.md",
+      "skillFolderHash": "7506d9a0a4b35621ff23ed66a4dc42f55d65654d",
+      "installedAt": "2026-07-14T19:33:36.174Z",
+      "updatedAt": "2026-07-14T19:33:36.174Z"
+    },
+    "react-native-patterns": {
+      "source": "affaan-m/ECC",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/affaan-m/ECC.git",
+      "skillPath": "skills/react-native-patterns/SKILL.md",
+      "skillFolderHash": "a3b27a5b867fa035aebf6a1baf00a6eabab443a4",
+      "installedAt": "2026-07-14T19:33:36.175Z",
+      "updatedAt": "2026-07-14T19:33:36.175Z"
+    },
+    "react-patterns": {
+      "source": "affaan-m/ECC",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/affaan-m/ECC.git",
+      "skillPath": "skills/react-patterns/SKILL.md",
+      "skillFolderHash": "eda27679d5af43c3d76ce4653851a46b7d2aee21",
+      "installedAt": "2026-07-14T19:33:36.177Z",
+      "updatedAt": "2026-07-14T19:33:36.177Z"
+    },
+    "springboot-patterns": {
+      "source": "affaan-m/ECC",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/affaan-m/ECC.git",
+      "skillPath": "skills/springboot-patterns/SKILL.md",
+      "skillFolderHash": "151a65702990757a2f5a5a4bbc7c9ad84b456ddf",
+      "installedAt": "2026-07-14T19:33:36.178Z",
+      "updatedAt": "2026-07-14T19:33:36.178Z"
+    },
+    "springboot-security": {
+      "source": "affaan-m/ECC",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/affaan-m/ECC.git",
+      "skillPath": "skills/springboot-security/SKILL.md",
+      "skillFolderHash": "1fbdf4bf28cf3ffba1d07900cbacdbf9b3706c76",
+      "installedAt": "2026-07-14T19:33:36.179Z",
+      "updatedAt": "2026-07-14T19:33:36.179Z"
+    },
+    "springboot-tdd": {
+      "source": "affaan-m/ECC",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/affaan-m/ECC.git",
+      "skillPath": "skills/springboot-tdd/SKILL.md",
+      "skillFolderHash": "0dbe04e4ce6ed7d11c5eac60f01d12fcfbc040ec",
+      "installedAt": "2026-07-14T19:33:36.181Z",
+      "updatedAt": "2026-07-14T19:33:36.181Z"
+    },
+    "vite-patterns": {
+      "source": "affaan-m/ECC",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/affaan-m/ECC.git",
+      "skillPath": "skills/vite-patterns/SKILL.md",
+      "skillFolderHash": "7163274f4f95b4247af61bf02e0ecd9348fd0091",
+      "installedAt": "2026-07-14T19:33:36.183Z",
+      "updatedAt": "2026-07-14T19:33:36.183Z"
     }
   },
   "dismissed": {
