@@ -6,7 +6,8 @@ This repository contains a portable, cross-platform configuration structure shar
 
 ---
 
-## Project Structure
+<details>
+<summary><strong>Project Structure</strong></summary>
 
 ```
 .
@@ -80,6 +81,8 @@ This repository contains a portable, cross-platform configuration structure shar
 │
 └── README.md                         # This file
 ```
+
+</details>
 
 ---
 
