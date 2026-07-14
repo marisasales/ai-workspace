@@ -19,19 +19,29 @@ This repository contains a portable, cross-platform configuration structure shar
 │       ├── context7-mcp/            #   Context7 documentation MCP skill
 │       ├── conventional-branch/     #   Conventional Branch naming
 │       ├── create-readme/           #   README generation
+│       ├── docker-patterns/         #   Docker & Compose patterns
 │       ├── drawio-skill/            #   Diagram generation (draw.io)
+│       ├── error-handling/          #   Error handling patterns
 │       ├── find-skills/             #   Skill discovery
 │       ├── frontend-design/         #   UI component design
 │       ├── frontend-patterns/       #   Frontend development patterns
 │       ├── gitmoji-commit/          #   Gitmoji + Conventional Commits
 │       ├── java-springboot/         #   Spring Boot best practices
+│       ├── jpa-patterns/            #   JPA/Hibernate patterns
 │       ├── mcp-builder/             #   MCP server creation guide
+│       ├── postgres-patterns/       #   PostgreSQL patterns
 │       ├── project-architect/       #   Project scaffolding
 │       ├── project-spec/            #   Project specification (pt-BR)
 │       ├── python-patterns/         #   Python best practices
+│       ├── react-native-patterns/   #   React Native / Expo patterns
+│       ├── react-patterns/          #   React 18/19 patterns
 │       ├── security-review/         #   Security review checklist
 │       ├── skill-creator/           #   Skill authoring toolkit
-│       └── versioning-guide/        #   Semantic versioning decisions
+│       ├── springboot-patterns/     #   Spring Boot architecture
+│       ├── springboot-security/     #   Spring Security best practices
+│       ├── springboot-tdd/          #   Spring Boot TDD patterns
+│       ├── versioning-guide/        #   Semantic versioning decisions
+│       └── vite-patterns/           #   Vite build tool patterns
 │
 ├── .config/
 │   ├── Code/User/prompts/            # VS Code custom agent prompts
@@ -53,7 +63,7 @@ This repository contains a portable, cross-platform configuration structure shar
 │       │   ├── review.md
 │       │   ├── ship.md
 │       │   └── test.md
-│       └── command/                  #   Opencode command definitions
+│       └── commands/                 #   Opencode command definitions
 │           ├── build.md              #   Build command
 │           ├── commit.md             #   Git commit command (gitmoji)
 │           ├── refactor-clean.md     #   Dead code removal & consolidation
@@ -226,13 +236,32 @@ GitHub API integration — list repos, create issues, manage PRs, search code, a
 
 ---
 
+## Plugins
+
+Configured in `.config/opencode/opencode.jsonc` under the `plugin` array.
+
+### @tarquinen/opencode-dcp (Dynamic Context Pruning)
+
+Automatically compresses conversation context to manage token usage and maintain performance during long sessions.
+
+- **Package:** `@tarquinen/opencode-dcp@latest`
+- **Config:** `.config/opencode/dcp.jsonc`
+
+### opencode-vibeguard
+
+Project-specific plugin for additional safeguards.
+
+- **Package:** `opencode-vibeguard`
+
+---
+
 ## Important Directories
 
 | Path                        | Description                              |
 |-----------------------------|------------------------------------------|
 | `.agents/skills/`           | All installed AI agent skills            |
 | `.config/opencode/agents/`  | Opencode agent definitions               |
-| `.config/opencode/command/` | Opencode command definitions             |
+| `.config/opencode/commands/`| Opencode command definitions             |
 | `.config/Code/User/prompts/`| VS Code custom agent prompts             |
 | `Ignores/`                  | Tool-specific ignore files               |
 
