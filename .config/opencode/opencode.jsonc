@@ -38,6 +38,7 @@
   },
   "plugin": [
     "@tarquinen/opencode-dcp@latest",
-    "opencode-vibeguard"
+    "opencode-vibeguard",
+    "opencode-ignore"
   ]
 }
