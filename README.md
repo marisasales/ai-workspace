@@ -77,7 +77,8 @@ This repository contains a portable, cross-platform configuration structure shar
 │   ├── .aiderignore                  #   Aider
 │   ├── .copilotignore               #   GitHub Copilot
 │   ├── .cursorignore                #   Cursor IDE
-│   └── .geminiignore                #   Gemini CLI
+│   ├── .geminiignore                #   Gemini CLI
+│   └── .ignore                      #   Opencode (via opencode-ignore plugin)
 │
 └── README.md                         # This file
 ```
@@ -95,6 +96,7 @@ Each AI tool reads a specific ignore file. Pick the one you need and copy it to 
 | Tool              | Ignore File         |
 |-------------------|---------------------|
 | Git               | `.gitignore`        |
+| Opencode          | `.ignore`           |
 | Cursor            | `.cursorignore`     |
 | GitHub Copilot    | `.copilotignore`    |
 | Gemini CLI        | `.geminiignore`     |
@@ -255,6 +257,12 @@ Automatically compresses conversation context to manage token usage and maintain
 Project-specific plugin for additional safeguards.
 
 - **Package:** `opencode-vibeguard`
+
+### opencode-ignore
+
+Respects `.ignore` files to exclude files/directories from opencode's context, similar to how `.gitignore` works for Git.
+
+- **Package:** `opencode-ignore`
 
 ---
 
