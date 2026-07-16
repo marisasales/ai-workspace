@@ -21,3 +21,4 @@ Create conventional commits with gitmoji: $ARGUMENTS
 - Each commit should compile/pass tests
 - Separate refactoring from feature changes
 - Separate unrelated fixes
+- **Body only when necessary** — keep it short and direct; omit if the subject line is sufficient
