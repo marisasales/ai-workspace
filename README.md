@@ -45,11 +45,13 @@ This repository contains a portable, cross-platform configuration structure shar
 │       └── vite-patterns/           #   Vite build tool patterns
 │
 ├── .config/
-│   ├── Code/User/prompts/            # VS Code custom agent prompts
-│   │   ├── global.instructions.md    #   Global system prompt
-│   │   ├── review.agent.md           #   Code review agent
-│   │   ├── ship.agent.md             #   Ship agent
-│   │   └── test.agent.md             #   Test agent
+│   ├── Code/User/                    # VS Code user config
+│   │   ├── mcp.json                  #   MCP server definitions
+│   │   └── prompts/                  #   Custom agent prompts
+│   │       ├── global.instructions.md#   Global system prompt
+│   │       ├── review.agent.md       #   Code review agent
+│   │       ├── ship.agent.md         #   Ship agent
+│   │       └── test.agent.md         #   Test agent
 │   │
 │   └── opencode/                     # Opencode configuration
 │       ├── opencode.jsonc            #   Main config (MCPs, plugins)
@@ -87,21 +89,59 @@ This repository contains a portable, cross-platform configuration structure shar
 
 ---
 
-## Quick Start
+## Quick Start — Automatic Install
+
+### 1. Clone o repositório
+
+```bash
+git clone https://github.com/marisasales/ai-workspace.git
+cd ai-workspace
+```
+
+### 2. Execute o instalador
+
+O script copia tudo para os paths corretos do seu sistema automaticamente.
+
+**Linux / macOS**
+
+```bash
+bash install.sh
+```
+
+**Windows (PowerShell)**
+
+```powershell
+powershell -ExecutionPolicy Bypass -File install.ps1
+```
+
+Both scripts do the following automatically:
+
+- Backup any existing target directories (adds `.bak.YYYYMMDDHHmmss` suffix)
+- Copy `.agents/` → `~/.agents/`
+- Copy `.config/opencode/` → `~/.config/opencode/`
+- Copy `mcp.json` → VS Code user config folder
+- Copy VS Code prompts → platform-specific prompts folder
+- Run `npm install` inside the copied opencode folder (if `package.json` exists)
+
+> **Requires Node.js >= 18** for the Opencode dependencies step.
+
+---
+
+## Quick Start — Manual
 
 ### 1. Choose the right ignore file
 
 Each AI tool reads a specific ignore file. Pick the one you need and copy it to your project root:
 
-| Tool              | Ignore File         |
-|-------------------|---------------------|
-| Git               | `.gitignore`        |
-| Opencode          | `.ignore`           |
-| Cursor            | `.cursorignore`     |
-| GitHub Copilot    | `.copilotignore`    |
-| Gemini CLI        | `.geminiignore`     |
-| Aider             | `.aiderignore`      |
-| Generic AI agent  | `.agentignore`      |
+| Tool             | Ignore File      |
+| ---------------- | ---------------- |
+| Git              | `.gitignore`     |
+| Opencode         | `.ignore`        |
+| Cursor           | `.cursorignore`  |
+| GitHub Copilot   | `.copilotignore` |
+| Gemini CLI       | `.geminiignore`  |
+| Aider            | `.aiderignore`   |
+| Generic AI agent | `.agentignore`   |
 
 > **Linux/macOS:** These files start with a dot — they are hidden. Use `ls -a` in the terminal or enable **Show Hidden Files** in your file manager to see them. On Windows they are visible by default in most editors.
 
@@ -118,11 +158,12 @@ Requires **Node.js >= 18**.
 
 ## Platform Paths
 
-| Item                | Linux                                        | Windows                                                |
-|---------------------|----------------------------------------------|--------------------------------------------------------|
-| `.agents/`          | `~/.agents/`                                 | `%USERPROFILE%\.agents\`                               |
-| `.config/opencode/` | `~/.config/opencode/`                        | `%USERPROFILE%\.config\opencode\`                      |
-| VS Code prompts     | `~/.config/Code/User/prompts/`               | `%APPDATA%\Code\User\prompts\`                         |
+| Item                | Linux                          | Windows                           | Repo Source                  |
+| ------------------- | ------------------------------ | --------------------------------- | ---------------------------- |
+| `.agents/`          | `~/.agents/`                   | `%USERPROFILE%\.agents\`          | `.agents/`                   |
+| `.config/opencode/` | `~/.config/opencode/`          | `%USERPROFILE%\.config\opencode\` | `.config/opencode/`          |
+| VS Code MCP         | `~/.config/Code/User/mcp.json` | `%APPDATA%\Code\User\mcp.json`    | `.config/Code/User/mcp.json` |
+| VS Code prompts     | `~/.config/Code/User/prompts/` | `%APPDATA%\Code\User\prompts\`    | `.config/Code/User/prompts/` |
 
 > **Note on `~/.config/opencode`:** The `node_modules/`, `package.json`, and `package-lock.json` files inside `.config/opencode/` are **local dependencies** and should **not** be committed to version control (already listed in `.config/opencode/.gitignore`). Only the configuration files (`opencode.jsonc`, `AGENTS.md`, `dcp.jsonc`, `tui.json`, `agents/`) are meant to be tracked.
 
@@ -130,7 +171,14 @@ Requires **Node.js >= 18**.
 
 ## MCP Servers
 
-Configured in `.config/opencode/opencode.jsonc`. Below are the defined MCP servers, their purpose, installation links, and API key setup.
+MCP servers are defined in two places depending on which tool consumes them:
+
+| Config file      | Tool                   | Repo path                         |
+| ---------------- | ---------------------- | --------------------------------- |
+| `opencode.jsonc` | Opencode               | `.config/opencode/opencode.jsonc` |
+| `mcp.json`       | VS Code (Copilot Chat) | `.config/Code/User/mcp.json`      |
+
+Both files define the same set of servers (Context7, GitHub, shadcn, Playwright). Below are the details, installation links, and API key setup for each one.
 
 ### Context7 (Remote, Enabled)
 
@@ -147,16 +195,19 @@ Documentation retrieval for 9,000+ libraries — provides up-to-date, version-sp
 3. Set the environment variable:
 
    **Linux/macOS (add to `~/.bashrc`, `~/.zshrc`, or `~/.profile`):**
+
    ```bash
    export CONTEXT7_PERSONAL_ACCESS_TOKEN="ctx7_xxx..."
    ```
 
    **Windows PowerShell (add to `$PROFILE`):**
+
    ```powershell
    $env:CONTEXT7_PERSONAL_ACCESS_TOKEN = "ctx7_xxx..."
    ```
 
    **Windows Cmd:**
+
    ```cmd
    setx CONTEXT7_PERSONAL_ACCESS_TOKEN "ctx7_xxx..."
    ```
@@ -219,16 +270,19 @@ GitHub API integration — list repos, create issues, manage PRs, search code, a
 5. Set the environment variable:
 
    **Linux/macOS:**
+
    ```bash
    export GITHUB_PERSONAL_ACCESS_TOKEN="ghp_xxx..."
    ```
 
    **Windows PowerShell:**
+
    ```powershell
    $env:GITHUB_PERSONAL_ACCESS_TOKEN = "ghp_xxx..."
    ```
 
    **Windows Cmd:**
+
    ```cmd
    setx GITHUB_PERSONAL_ACCESS_TOKEN "ghp_xxx..."
    ```
@@ -268,13 +322,13 @@ Respects `.ignore` files to exclude files/directories from opencode's context, s
 
 ## Important Directories
 
-| Path                        | Description                              |
-|-----------------------------|------------------------------------------|
-| `.agents/skills/`           | All installed AI agent skills            |
-| `.config/opencode/agents/`  | Opencode agent definitions               |
-| `.config/opencode/commands/`| Opencode command definitions             |
-| `.config/Code/User/prompts/`| VS Code custom agent prompts             |
-| `Ignores/`                  | Tool-specific ignore files               |
+| Path                         | Description                   |
+| ---------------------------- | ----------------------------- |
+| `.agents/skills/`            | All installed AI agent skills |
+| `.config/opencode/agents/`   | Opencode agent definitions    |
+| `.config/opencode/commands/` | Opencode command definitions  |
+| `.config/Code/User/prompts/` | VS Code custom agent prompts  |
+| `Ignores/`                   | Tool-specific ignore files    |
 
 ---
 
