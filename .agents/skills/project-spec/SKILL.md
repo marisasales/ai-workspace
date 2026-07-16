@@ -1,7 +1,7 @@
 ---
 name: project-spec
 description: >-
-  Generate a project specification (especificação do projeto) — a single pt-BR .md blueprint defining scope, requirements, and tech stack before coding starts.
+  Generate a project specification — a single .md blueprint defining scope, requirements, and tech stack before coding starts. Use another language only when explicitly requested.
 ---
 
 ## When to use this skill
@@ -39,7 +39,7 @@ For any essential field the user didn't provide:
 - **Make a reasonable inference** based on the project context.
 - **Mark it clearly** in the document with a `> [!NOTE]` or `> [!INFO]` block explaining what was assumed.
 
-Only skip a field if you genuinely cannot infer it from context. Example: if a name isn't given, derive one from the project description ("Sistema de Gerenciamento de Tarefas", "Encurtador de URLs", etc.).
+Only skip a field if you genuinely cannot infer it from context. Example: if a name isn't given, derive one from the project description ("Task Manager", "URL Shortener", etc.).
 
 ### 3. Research when needed
 
@@ -55,65 +55,76 @@ Write **exactly one** markdown file named `<project-name>-blueprint.md`. Never s
 
 Use this flexible template, reordering sections as makes sense for the project:
 
-```markdown
+````markdown
 # [Project Name] — Project Blueprint
 
 > [!NOTE] Assumptions made during creation
+>
 > - [List any inferred/assumed fields]
 > - [These should be reviewed and confirmed]
 
-## 1. Descrição do Projeto
+## 1. Project Description
+
 <!-- Objective + Problem Statement + Context. 2-3 paragraphs max. Keep tight. -->
 
-## 2. Público-Alvo
+## 2. Target Audience
+
 <!-- Who uses this and in what context. Be specific. -->
 
-## 3. Requisitos Funcionais
+## 3. Functional Requirements
+
 <!-- What the system MUST do. Use RF-XX identifiers. Group by module if >5. -->
+
 - RF-01: [description]
 - RF-02: [description]
 
-## 4. Requisitos Não Funcionais
+## 4. Non-Functional Requirements
+
 <!-- Performance, security, scalability, etc. Use RNF-XX identifiers. -->
+
 - RNF-01: [description]
 
-## 5. Stack Tecnológica
-<!-- Table with justification column. Every choice needs a "why". -->
-| Categoria | Tecnologia | Justificativa |
-|-----------|-----------|---------------|
+## 5. Tech Stack
 
-## 6. Estrutura de Diretórios (opcional)
+<!-- Table with justification column. Every choice needs a "why". -->
+
+| Category | Technology | Justification |
+| -------- | ---------- | ------------- |
+
+## 6. Directory Structure (optional)
+
 <!-- Include only when the tech stack is clearly defined. Shows the project file layout. -->
 
 Use the directory structure conventions from `project-architect` skill. Pick the blueprint that matches the stack:
 
-| Stack | Blueprint |
-|-------|-----------|
-| Python (FastAPI, Flask, Django) | `src/` layout: `src/app/`, `src/api/`, `src/models/`, `src/services/`, `tests/` |
-| Node.js / Express / Fastify | `src/` layout: `src/routes/`, `src/controllers/`, `src/services/`, `src/middleware/`, `tests/` |
-| Next.js / React / Vue (framework) | Feature-driven: `src/app/`, `src/components/`, `src/features/`, `src/lib/` |
-| Java Spring Boot (small) | Layered: `controller/`, `service/`, `model/`, `repository/`, `dto/` |
+| Stack                             | Blueprint                                                                                      |
+| --------------------------------- | ---------------------------------------------------------------------------------------------- |
+| Python (FastAPI, Flask, Django)   | `src/` layout: `src/app/`, `src/api/`, `src/models/`, `src/services/`, `tests/`                |
+| Node.js / Express / Fastify       | `src/` layout: `src/routes/`, `src/controllers/`, `src/services/`, `src/middleware/`, `tests/` |
+| Next.js / React / Vue (framework) | Feature-driven: `src/app/`, `src/components/`, `src/features/`, `src/lib/`                     |
+| Java Spring Boot (small)          | Layered: `controller/`, `service/`, `model/`, `repository/`, `dto/`                            |
 
 Include the tree as an ASCII snippet:
 
 ```text
-meu-projeto/
+my-project/
 ├── src/
-│   ├── api/          # Rotas / endpoints
-│   ├── models/       # Definições de dados
-│   ├── services/     # Lógica de negócio
-│   └── main.py       # Ponto de entrada
+│   ├── api/          # Routes / endpoints
+│   ├── models/       # Data definitions
+│   ├── services/     # Business logic
+│   └── main.py       # Entry point
 ├── tests/
 └── README.md
 ```
+````
 
 Keep it compact — 10-15 lines max. Omit this section if the stack is too uncertain to map to a standard layout.
 
-## 7. Entregas / Marcos
+## 7. Deliverables / Milestones
 
 <!-- Optional. MVP scope, implementation phases. Include only if useful. -->
 
-```
+````
 **Critical rules:**
 
 | Rule | Why |
@@ -125,7 +136,7 @@ Keep it compact — 10-15 lines max. Omit this section if the stack is too uncer
 | **Proportional depth** | A 5-person task board doesn't need C4 diagrams. A URL shortener study doesn't need deployment topology. Match depth to complexity. |
 | **No code** | This is a spec document. No implementation code, no schemas, no API endpoints. |
 | **Directory structure when useful** | Include an ASCII tree only when the stack maps clearly to a standard layout (Python src-layout, Node.js, Next.js). Omit otherwise. |
-| **pt-BR** | All content in Brazilian Portuguese. |
+| **English by default** | All content in English unless the user explicitly requests another language. |
 | **No fluff** | If a sentence doesn't inform a developer or AI, delete it. |
 
 ### 5. Flag assumptions with callout blocks
@@ -134,12 +145,12 @@ Use markdown callouts for assumptions and open questions:
 
 ```markdown
 > [!NOTE]
-> Nome do projeto inferido a partir da descrição. O nome real pode ser diferente.
+> Project name inferred from the description. The actual name may differ.
 
 > [!INFO]
-> Considere usar SQLite (via Turso) em vez de PostgreSQL — para 50-100 tarefas/mês,
-> um banco serverless é gratuito e não adiciona complexidade operacional.
-```
+> Consider using SQLite (via Turso) instead of PostgreSQL — for 50-100 tasks/month,
+> a serverless database is free and adds no operational complexity.
+````
 
 ### 6. Save and confirm
 
@@ -151,4 +162,4 @@ Save the file in the current working directory. Inform the user that the bluepri
 - **Do NOT create multiple files** — one single `.md` file.
 - **Do NOT write implementation code** — no schemas, no API endpoints, no scripts.
 - **Do NOT over-engineer** — a simple CRUD app doesn't need C4 diagrams, microservices, or CI/CD pipeline specs.
-- **Do NOT use English** — the document must be in pt-BR unless the user explicitly asks otherwise.
+- **Do NOT use another language unless explicitly requested** — the default language is English.
