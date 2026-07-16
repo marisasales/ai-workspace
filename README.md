@@ -46,6 +46,7 @@ This repository contains a portable, cross-platform configuration structure shar
 │
 ├── .config/
 │   ├── Code/User/                    # VS Code user config
+│   │   ├── chatLanguageModels.json   #   Custom chat model providers
 │   │   ├── mcp.json                  #   MCP server definitions
 │   │   └── prompts/                  #   Custom agent prompts
 │   │       ├── global.instructions.md#   Global system prompt
@@ -122,6 +123,7 @@ Both scripts do the following automatically:
 - Copy `.agents/` → `~/.agents/`
 - Copy `.config/opencode/` → `~/.config/opencode/`
 - Copy `mcp.json` → VS Code user config folder
+- Copy `chatLanguageModels.json` → VS Code user config folder
 - Copy VS Code prompts → platform-specific prompts folder
 - Run `npm install` inside the copied opencode folder (if `package.json` exists)
 
@@ -160,12 +162,13 @@ Requires **Node.js >= 18**.
 
 ## Platform Paths
 
-| Item                | Linux                          | Windows                           | Repo Source                  |
-| ------------------- | ------------------------------ | --------------------------------- | ---------------------------- |
-| `.agents/`          | `~/.agents/`                   | `%USERPROFILE%\.agents\`          | `.agents/`                   |
-| `.config/opencode/` | `~/.config/opencode/`          | `%USERPROFILE%\.config\opencode\` | `.config/opencode/`          |
-| VS Code MCP         | `~/.config/Code/User/mcp.json` | `%APPDATA%\Code\User\mcp.json`    | `.config/Code/User/mcp.json` |
-| VS Code prompts     | `~/.config/Code/User/prompts/` | `%APPDATA%\Code\User\prompts\`    | `.config/Code/User/prompts/` |
+| Item                | Linux                          | Windows                           | Repo Source                          |
+| ------------------- | ------------------------------ | --------------------------------- | ------------------------------------ |
+| `.agents/`          | `~/.agents/`                   | `%USERPROFILE%\.agents\`          | `.agents/`                           |
+| `.config/opencode/` | `~/.config/opencode/`          | `%USERPROFILE%\.config\opencode\` | `.config/opencode/`                  |
+| VS Code MCP         | `~/.config/Code/User/mcp.json` | `%APPDATA%\Code\User\mcp.json`    | `.config/Code/User/mcp.json`         |
+| VS Code chat models | `~/.config/Code/User/chatLanguageModels.json` | `%APPDATA%\Code\User\chatLanguageModels.json` | `.config/Code/User/chatLanguageModels.json` |
+| VS Code prompts     | `~/.config/Code/User/prompts/` | `%APPDATA%\Code\User\prompts\`    | `.config/Code/User/prompts/`         |
 
 > **Note on `~/.config/opencode`:** The `node_modules/`, `package.json`, and `package-lock.json` files inside `.config/opencode/` are **local dependencies** and should **not** be committed to version control (already listed in `.config/opencode/.gitignore`). Only the configuration files (`opencode.jsonc`, `AGENTS.md`, `dcp.jsonc`, `tui.json`, `agents/`) are meant to be tracked.
 
@@ -294,6 +297,59 @@ GitHub API integration — list repos, create issues, manage PRs, search code, a
 - GitHub: [github.com/github/github-mcp-server](https://github.com/github/github-mcp-server)
 - Docs: [docs.github.com/en/copilot](https://docs.github.com/en/copilot/how-tos/provide-context/use-mcp-in-your-ide/set-up-the-github-mcp-server)
 - PAT setup guide: [mcpservers.com/blog/find-your-github-personal-access-token](https://mcpservers.com/blog/find-your-github-personal-access-token)
+
+---
+
+## VS Code Chat Language Models
+
+Custom chat model providers are defined in `chatLanguageModels.json` and copied to the VS Code user config folder by the installer. This file registers third-party model endpoints (OpenCode Zen, Groq) so they appear in the VS Code chat model picker.
+
+### How Credentials Work
+
+The JSON file uses **secret input placeholders** (e.g. `"${input:chat.lm.secret.-4428548d}"`) instead of hardcoded API keys. This means:
+
+1. The file is **safe to commit** to version control — no real keys are stored in it.
+2. When you copy this repo to a **new machine**, VS Code detects that the local secret values are missing.
+3. On the **first attempt to use a model**, VS Code opens a prompt at the top of the window asking you to enter the API key for that provider.
+4. The key is then stored securely in VS Code's local secret storage (OS keychain) and never written back to the JSON file.
+
+> [!WARNING]
+> Never replace the `${input:...}` placeholders with actual API keys before committing. The whole point of this mechanism is to keep secrets out of version control.
+
+### API Key Setup
+
+You need an API key for each provider you want to use. Follow the links below to generate one.
+
+#### OpenCode Zen
+
+Provides free-tier access to Big Pickle, DeepSeek V4 Flash, MiMo V2 Pro, and Nemotron 3 Super.
+
+1. Go to [opencode.ai](https://opencode.ai) and sign up / log in
+2. Navigate to the API keys or dashboard section
+3. Generate a new API key
+4. When VS Code prompts you, paste the key
+
+#### Groq
+
+Provides access to GPT-OSS 120B, Llama 3.3 70B, Qwen 3 32B, and Qwen 3.6 27B on Groq's inference infrastructure.
+
+1. Go to [console.groq.com](https://console.groq.com) and sign up / log in
+2. Navigate to **API Keys** in the sidebar
+3. Click **Create API Key**
+4. When VS Code prompts you, paste the key
+
+### Available Models
+
+| Provider    | Model                       | Vision | Max Input Tokens |
+| ----------- | --------------------------- | ------ | ---------------- |
+| OpenCode Zen | Big Pickle                 | No     | 200,000          |
+| OpenCode Zen | DeepSeek V4 Flash          | No     | 200,000          |
+| OpenCode Zen | MiMo V2 Pro                | No     | 200,000          |
+| OpenCode Zen | Nemotron 3 Super           | No     | 1,000,000        |
+| Groq        | GPT-OSS 120B               | No     | 131,072          |
+| Groq        | Llama 3.3 70B Versatile    | No     | 128,000          |
+| Groq        | Qwen 3 32B                 | No     | 131,072          |
+| Groq        | Qwen 3.6 27B               | Yes    | 262,144          |
 
 ---
 

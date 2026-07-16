@@ -1,0 +1,90 @@
+[
+	{
+		"name": "OpenCode Zen",
+		"vendor": "customendpoint",
+		"apiKey": "${input:chat.lm.secret.-4428548d}",
+		"apiType": "chat-completions",
+		"models": [
+			{
+				"id": "big-pickle",
+				"name": "Big Pickle (Zen Free)",
+				"url": "https://opencode.ai/zen/v1/chat/completions",
+				"toolCalling": true,
+				"vision": false,
+				"maxInputTokens": 200000,
+				"maxOutputTokens": 4096
+			},
+			{
+				"id": "deepseek-v4-flash-free",
+				"name": "DeepSeek V4 Flash (Zen Free)",
+				"url": "https://opencode.ai/zen/v1/chat/completions",
+				"toolCalling": true,
+				"vision": false,
+				"maxInputTokens": 200000,
+				"maxOutputTokens": 4096
+			},
+			{
+				"id": "mimo-v2-pro-free",
+				"name": "MiMo V2 Pro (Zen Free)",
+				"url": "https://opencode.ai/zen/v1/chat/completions",
+				"toolCalling": true,
+				"vision": false,
+				"maxInputTokens": 200000,
+				"maxOutputTokens": 4096
+			},
+			{
+				"id": "nemotron-3-super-free",
+				"name": "Nemotron 3 Super (Zen Free)",
+				"url": "https://opencode.ai/zen/v1/chat/completions",
+				"toolCalling": true,
+				"vision": false,
+				"maxInputTokens": 1000000,
+				"maxOutputTokens": 8192
+			}
+		]
+	},
+	{
+		"name": "Groq",
+		"vendor": "customendpoint",
+		"apiKey": "${input:chat.lm.secret.-7627778a}",
+		"apiType": "chat-completions",
+		"models": [
+			{
+				"id": "openai/gpt-oss-120b",
+				"name": "GPT-OSS 120B (Groq)",
+				"url": "https://api.groq.com/openai/v1/chat/completions",
+				"toolCalling": true,
+				"vision": false,
+				"maxInputTokens": 131072,
+				"maxOutputTokens": 8192
+			},
+			{
+				"id": "llama-3.3-70b-versatile",
+				"name": "Llama 3.3 70B (Groq)",
+				"url": "https://api.groq.com/openai/v1/chat/completions",
+				"toolCalling": true,
+				"vision": false,
+				"maxInputTokens": 128000,
+				"maxOutputTokens": 8192
+			},
+			{
+				"id": "qwen/qwen3-32b",
+				"name": "Qwen 3 32B (Groq)",
+				"url": "https://api.groq.com/openai/v1/chat/completions",
+				"toolCalling": true,
+				"vision": false,
+				"maxInputTokens": 131072,
+				"maxOutputTokens": 8192
+			},
+			{
+				"id": "qwen/qwen3.6-27b",
+				"name": "Qwen 3.6 27B (Groq)",
+				"url": "https://api.groq.com/openai/v1/chat/completions",
+				"toolCalling": true,
+				"vision": true,
+				"maxInputTokens": 262144,
+				"maxOutputTokens": 8192
+			}
+		]
+	}
+]

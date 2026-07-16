@@ -91,6 +91,9 @@ copy_dir "$REPO_ROOT/.config/opencode" "$TARGET_OPENCODE" ".config/opencode/"
 # 3. VS Code MCP config
 copy_file "$REPO_ROOT/.config/Code/User/mcp.json" "$TARGET_VSCODE/mcp.json" "mcp.json"
 
+# 3b. VS Code chat language models
+copy_file "$REPO_ROOT/.config/Code/User/chatLanguageModels.json" "$TARGET_VSCODE/chatLanguageModels.json" "chatLanguageModels.json"
+
 # 4. VS Code prompts
 if [ -d "$REPO_ROOT/.config/Code/User/prompts" ]; then
   mkdir -p "$TARGET_VSCODE/prompts"

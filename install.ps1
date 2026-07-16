@@ -55,6 +55,9 @@ Copy-Dir -src "$REPO_ROOT\.config\opencode" -dst "$USERPROFILE\.config\opencode"
 # 3. VS Code MCP config
 Copy-File -src "$REPO_ROOT\.config\Code\User\mcp.json" -dst "$APPDATA\Code\User\mcp.json" -name "mcp.json"
 
+# 3b. VS Code chat language models
+Copy-File -src "$REPO_ROOT\.config\Code\User\chatLanguageModels.json" -dst "$APPDATA\Code\User\chatLanguageModels.json" -name "chatLanguageModels.json"
+
 # 4. VS Code prompts
 $vscodePrompts = "$REPO_ROOT\.config\Code\User\prompts"
 $targetPrompts = "$APPDATA\Code\User\prompts"
