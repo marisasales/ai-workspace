@@ -32,7 +32,7 @@ This repository contains a portable, cross-platform configuration structure shar
 │       ├── mcp-builder/             #   MCP server creation guide
 │       ├── postgres-patterns/       #   PostgreSQL patterns
 │       ├── project-architect/       #   Project scaffolding
-│       ├── project-spec/            #   Project specification (pt-BR)
+│       ├── project-spec/            #   Project specification
 │       ├── python-patterns/         #   Python best practices
 │       ├── react-native-patterns/   #   React Native / Expo patterns
 │       ├── react-patterns/          #   React 18/19 patterns
@@ -91,32 +91,34 @@ This repository contains a portable, cross-platform configuration structure shar
 
 ## Quick Start — Automatic Install
 
-### 1. Clone o repositório
+### 1. Clone the repository
 
 ```bash
 git clone https://github.com/marisasales/ai-workspace.git
 cd ai-workspace
 ```
 
-### 2. Execute o instalador
+### 2. Run the installer
 
-O script copia tudo para os paths corretos do seu sistema automaticamente.
+The script copies everything to the correct system paths automatically. If a target file or directory already exists, you'll be prompted before overwriting — type `y` to replace or just press Enter to skip and keep your local version.
 
 **Linux / macOS**
 
 ```bash
-bash install.sh
+bash install.sh          # interactive (prompts before overwriting)
+bash install.sh -f       # force — overwrite everything without asking
 ```
 
 **Windows (PowerShell)**
 
 ```powershell
-powershell -ExecutionPolicy Bypass -File install.ps1
+powershell -ExecutionPolicy Bypass -File install.ps1        # interactive
+powershell -ExecutionPolicy Bypass -File install.ps1 -Force # overwrite all
 ```
 
 Both scripts do the following automatically:
 
-- Backup any existing target directories (adds `.bak.YYYYMMDDHHmmss` suffix)
+- Backup any existing target directories (adds `.bak` suffix)
 - Copy `.agents/` → `~/.agents/`
 - Copy `.config/opencode/` → `~/.config/opencode/`
 - Copy `mcp.json` → VS Code user config folder
