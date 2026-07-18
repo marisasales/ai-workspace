@@ -50,6 +50,7 @@ This repository contains a portable, cross-platform configuration structure shar
 │   │   ├── mcp.json                  #   MCP server definitions
 │   │   └── prompts/                  #   Custom agent prompts
 │   │       ├── global.instructions.md#   Global system prompt
+│   │       ├── image-descriptor.prompt.md # Image description prompt
 │   │       ├── review.agent.md       #   Code review agent
 │   │       ├── ship.agent.md         #   Ship agent
 │   │       └── test.agent.md         #   Test agent
@@ -70,6 +71,7 @@ This repository contains a portable, cross-platform configuration structure shar
 │       └── commands/                 #   Opencode command definitions
 │           ├── build.md              #   Build command
 │           ├── commit.md             #   Git commit command (gitmoji)
+│           ├── image-descriptor.md   #   Image description command
 │           ├── refactor-clean.md     #   Dead code removal & consolidation
 │           ├── scan-security.md      #   OWASP security review
 │           └── update-docs.md        #   Documentation sync
@@ -322,7 +324,7 @@ You need an API key for each provider you want to use. Follow the links below to
 
 #### OpenCode Zen
 
-Provides free-tier access to Big Pickle, DeepSeek V4 Flash, MiMo V2 Pro, and Nemotron 3 Super.
+Provides free-tier access to Big Pickle, DeepSeek V4 Flash, MiMo-V2.5, North Mini Code, and Nemotron 3 Ultra.
 
 1. Go to [opencode.ai](https://opencode.ai) and sign up / log in
 2. Navigate to the API keys or dashboard section
@@ -340,16 +342,17 @@ Provides access to GPT-OSS 120B, Llama 3.3 70B, Qwen 3 32B, and Qwen 3.6 27B on 
 
 ### Available Models
 
-| Provider    | Model                       | Vision | Max Input Tokens |
-| ----------- | --------------------------- | ------ | ---------------- |
-| OpenCode Zen | Big Pickle                 | No     | 200,000          |
-| OpenCode Zen | DeepSeek V4 Flash          | No     | 200,000          |
-| OpenCode Zen | MiMo V2 Pro                | No     | 200,000          |
-| OpenCode Zen | Nemotron 3 Super           | No     | 1,000,000        |
-| Groq        | GPT-OSS 120B               | No     | 131,072          |
-| Groq        | Llama 3.3 70B Versatile    | No     | 128,000          |
-| Groq        | Qwen 3 32B                 | No     | 131,072          |
-| Groq        | Qwen 3.6 27B               | Yes    | 262,144          |
+| Provider     | Model                    | Vision | Max Input Tokens |
+| ------------ | ------------------------ | ------ | ---------------- |
+| OpenCode Zen | Big Pickle               | No     | 200,000          |
+| OpenCode Zen | DeepSeek V4 Flash        | No     | 200,000          |
+| OpenCode Zen | MiMo-V2.5 Free           | No     | 200,000          |
+| OpenCode Zen | North Mini Code Free     | No     | 200,000          |
+| OpenCode Zen | Nemotron 3 Ultra Free    | No     | 200,000          |
+| Groq         | GPT-OSS 120B             | No     | 131,072          |
+| Groq         | Llama 3.3 70B Versatile  | No     | 128,000          |
+| Groq         | Qwen 3 32B               | No     | 131,072          |
+| Groq         | Qwen 3.6 27B             | Yes    | 262,144          |
 
 ---
 
