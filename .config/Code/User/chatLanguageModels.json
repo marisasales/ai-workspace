@@ -25,7 +25,7 @@
 			},
 			{
 				"id": "mimo-v2.5-free",
-				"name": "MiMo-V2.5 Free",
+				"name": "MiMo-V2.5 (OpenCode Zen)",
 				"url": "https://opencode.ai/zen/v1/chat/completions",
 				"toolCalling": true,
 				"vision": false,
@@ -34,7 +34,7 @@
 			},
 			{
 				"id": "north-mini-code-free",
-				"name": "North Mini Code Free",
+				"name": "North Mini Code (OpenCode Zen)",
 				"url": "https://opencode.ai/zen/v1/chat/completions",
 				"toolCalling": true,
 				"vision": false,
@@ -43,7 +43,7 @@
 			},
 			{
 				"id": "nemotron-3-ultra-free",
-				"name": "Nemotron 3 Ultra Free",
+				"name": "Nemotron 3 Ultra (OpenCode Zen)",
 				"url": "https://opencode.ai/zen/v1/chat/completions",
 				"toolCalling": true,
 				"vision": false,

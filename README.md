@@ -346,9 +346,9 @@ Provides access to GPT-OSS 120B, Llama 3.3 70B, Qwen 3 32B, and Qwen 3.6 27B on 
 | ------------ | ------------------------ | ------ | ---------------- |
 | OpenCode Zen | Big Pickle               | No     | 200,000          |
 | OpenCode Zen | DeepSeek V4 Flash        | No     | 200,000          |
-| OpenCode Zen | MiMo-V2.5 Free           | No     | 200,000          |
-| OpenCode Zen | North Mini Code Free     | No     | 200,000          |
-| OpenCode Zen | Nemotron 3 Ultra Free    | No     | 200,000          |
+| OpenCode Zen | MiMo-V2.5                | No     | 200,000          |
+| OpenCode Zen | North Mini Code          | No     | 200,000          |
+| OpenCode Zen | Nemotron 3 Ultra         | No     | 200,000          |
 | Groq         | GPT-OSS 120B             | No     | 131,072          |
 | Groq         | Llama 3.3 70B Versatile  | No     | 128,000          |
 | Groq         | Qwen 3 32B               | No     | 131,072          |
