@@ -4,33 +4,33 @@
 		"vendor": "customendpoint",
 		"apiKey": "${input:chat.lm.secret.-4428548d}",
 		"apiType": "chat-completions",
-		"models": [
+				"models": [
 			{
 				"id": "big-pickle",
-				"name": "Big Pickle (OpenCode Zen)",
+				"name": "Big Pickle (Zen Free)",
 				"url": "https://opencode.ai/zen/v1/chat/completions",
 				"toolCalling": true,
 				"vision": false,
 				"maxInputTokens": 200000,
-				"maxOutputTokens": 4096
+				"maxOutputTokens": 128000
 			},
 			{
 				"id": "deepseek-v4-flash-free",
-				"name": "DeepSeek V4 Flash (OpenCode Zen)",
+				"name": "DeepSeek V4 Flash (Zen Free)",
 				"url": "https://opencode.ai/zen/v1/chat/completions",
 				"toolCalling": true,
 				"vision": false,
 				"maxInputTokens": 200000,
-				"maxOutputTokens": 4096
+				"maxOutputTokens": 128000
 			},
 			{
 				"id": "mimo-v2.5-free",
-				"name": "MiMo-V2.5 (OpenCode Zen)",
+				"name": "MiMo V2.5 (OpenCode Zen)",
 				"url": "https://opencode.ai/zen/v1/chat/completions",
 				"toolCalling": true,
 				"vision": false,
 				"maxInputTokens": 200000,
-				"maxOutputTokens": 4096
+				"maxOutputTokens": 128000
 			},
 			{
 				"id": "north-mini-code-free",
@@ -38,8 +38,8 @@
 				"url": "https://opencode.ai/zen/v1/chat/completions",
 				"toolCalling": true,
 				"vision": false,
-				"maxInputTokens": 200000,
-				"maxOutputTokens": 4096
+				"maxInputTokens": 131072,
+				"maxOutputTokens": 131072
 			},
 			{
 				"id": "nemotron-3-ultra-free",
@@ -47,8 +47,8 @@
 				"url": "https://opencode.ai/zen/v1/chat/completions",
 				"toolCalling": true,
 				"vision": false,
-				"maxInputTokens": 200000,
-				"maxOutputTokens": 4096
+				"maxInputTokens": 1000000,
+				"maxOutputTokens": 128000
 			}
 		]
 	},
@@ -65,7 +65,7 @@
 				"toolCalling": true,
 				"vision": false,
 				"maxInputTokens": 131072,
-				"maxOutputTokens": 8192
+				"maxOutputTokens": 65536
 			},
 			{
 				"id": "llama-3.3-70b-versatile",
@@ -74,16 +74,16 @@
 				"toolCalling": true,
 				"vision": false,
 				"maxInputTokens": 128000,
-				"maxOutputTokens": 8192
+				"maxOutputTokens": 32768
 			},
 			{
-				"id": "qwen/qwen3-32b",
-				"name": "Qwen 3 32B (Groq)",
+				"id": "minimaxai/minimax-m2.7",
+				"name": "MiniMax M2.7 (Groq)",
 				"url": "https://api.groq.com/openai/v1/chat/completions",
 				"toolCalling": true,
 				"vision": false,
-				"maxInputTokens": 131072,
-				"maxOutputTokens": 8192
+				"maxInputTokens": 196608,
+				"maxOutputTokens": 131072
 			},
 			{
 				"id": "qwen/qwen3.6-27b",
