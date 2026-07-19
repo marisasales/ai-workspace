@@ -49,11 +49,16 @@ This repository contains a portable, cross-platform configuration structure shar
 │   │   ├── chatLanguageModels.json   #   Custom chat model providers
 │   │   ├── mcp.json                  #   MCP server definitions
 │   │   └── prompts/                  #   Custom agent prompts
+│   │       ├── build.prompt.md      #   Build command prompt
+│   │       ├── commit.prompt.md     #   Commit command prompt
 │   │       ├── global.instructions.md#   Global system prompt
 │   │       ├── image-descriptor.prompt.md # Image description prompt
-│   │       ├── review.agent.md       #   Code review agent
-│   │       ├── ship.agent.md         #   Ship agent
-│   │       └── test.agent.md         #   Test agent
+│   │       ├── refactor-clean.prompt.md # Refactor command prompt
+│   │       ├── review.agent.md      #   Code review agent
+│   │       ├── scan-security.prompt.md # Security scan prompt
+│   │       ├── ship.agent.md        #   Ship agent
+│   │       ├── test.agent.md        #   Test agent
+│   │       └── update-docs.prompt.md # Documentation sync prompt
 │   │
 │   └── opencode/                     # Opencode configuration
 │       ├── opencode.jsonc            #   Main config (MCPs, plugins)
@@ -76,7 +81,7 @@ This repository contains a portable, cross-platform configuration structure shar
 │           ├── scan-security.md      #   OWASP security review
 │           └── update-docs.md        #   Documentation sync
 │
-├── Ignores/                          # Ignore files per AI tool
+├── ignores/                          # Ignore files per AI tool
 │   ├── .gitignore                    #   Git
 │   ├── .agentignore                  #   Generic AI agent
 │   ├── .aiderignore                  #   Aider
@@ -84,6 +89,9 @@ This repository contains a portable, cross-platform configuration structure shar
 │   ├── .cursorignore                #   Cursor IDE
 │   ├── .geminiignore                #   Gemini CLI
 │   └── .ignore                      #   Opencode (via opencode-ignore plugin)
+│
+├── install.ps1                       # Windows installer script
+├── install.sh                        # Linux/macOS installer script
 │
 └── README.md                         # This file
 ```
