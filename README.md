@@ -11,89 +11,89 @@ This repository contains a portable, cross-platform configuration structure shar
 
 ```
 .
-├── .agents/                          # Shared AI agent configuration
-│   ├── .skill-lock.json              # Skill installation manifest
-│   └── skills/                       # Installed skills
-│       ├── api-design/              #   REST API design patterns
-│       ├── backend-patterns/        #   Backend architecture patterns
-│       ├── coding-standards/        #   Cross-project coding conventions
-│       ├── context7-mcp/            #   Context7 documentation MCP skill
-│       ├── conventional-branch/     #   Conventional Branch naming
-│       ├── create-readme/           #   README generation
-│       ├── docker-patterns/         #   Docker & Compose patterns
-│       ├── drawio-skill/            #   Diagram generation (draw.io)
-│       ├── error-handling/          #   Error handling patterns
-│       ├── find-skills/             #   Skill discovery
-│       ├── frontend-design/         #   UI component design
-│       ├── frontend-patterns/       #   Frontend development patterns
-│       ├── gitmoji-commit/          #   Gitmoji + Conventional Commits
-│       ├── java-springboot/         #   Spring Boot best practices
-│       ├── jpa-patterns/            #   JPA/Hibernate patterns
-│       ├── mcp-builder/             #   MCP server creation guide
-│       ├── postgres-patterns/       #   PostgreSQL patterns
-│       ├── project-architect/       #   Project scaffolding
-│       ├── project-spec/            #   Project specification
-│       ├── python-patterns/         #   Python best practices
-│       ├── react-native-patterns/   #   React Native / Expo patterns
-│       ├── react-patterns/          #   React 18/19 patterns
-│       ├── security-review/         #   Security review checklist
-│       ├── skill-creator/           #   Skill authoring toolkit
-│       ├── springboot-patterns/     #   Spring Boot architecture
-│       ├── springboot-security/     #   Spring Security best practices
-│       ├── springboot-tdd/          #   Spring Boot TDD patterns
-│       ├── versioning-guide/        #   Semantic versioning decisions
-│       └── vite-patterns/           #   Vite build tool patterns
+├── .agents/                          # 	Shared AI agent configuration
+│   ├── .skill-lock.json              # 	Skill installation manifest
+│   └── skills/                       # 	Installed skills
+│       ├── api-design/              	#   REST API design patterns
+│       ├── backend-patterns/        	#   Backend architecture patterns
+│       ├── coding-standards/        	#   Cross-project coding conventions
+│       ├── context7-mcp/            	#   Context7 documentation MCP skill
+│       ├── conventional-branch/     	#   Conventional Branch naming
+│       ├── create-readme/           	#   README generation
+│       ├── docker-patterns/         	#   Docker & Compose patterns
+│       ├── drawio-skill/            	#   Diagram generation (draw.io)
+│       ├── error-handling/          	#   Error handling patterns
+│       ├── find-skills/             	#   Skill discovery
+│       ├── frontend-design/         	#   UI component design
+│       ├── frontend-patterns/       	#   Frontend development patterns
+│       ├── gitmoji-commit/          	#   Gitmoji + Conventional Commits
+│       ├── java-springboot/         	#   Spring Boot best practices
+│       ├── jpa-patterns/            	#   JPA/Hibernate patterns
+│       ├── mcp-builder/             	#   MCP server creation guide
+│       ├── postgres-patterns/       	#   PostgreSQL patterns
+│       ├── project-architect/       	#   Project scaffolding
+│       ├── project-spec/            	#   Project specification
+│       ├── python-patterns/         	#   Python best practices
+│       ├── react-native-patterns/   	#   React Native / Expo patterns
+│       ├── react-patterns/          	#   React 18/19 patterns
+│       ├── security-review/         	#   Security review checklist
+│       ├── skill-creator/           	#   Skill authoring toolkit
+│       ├── springboot-patterns/     	#   Spring Boot architecture
+│       ├── springboot-security/     	#   Spring Security best practices
+│       ├── springboot-tdd/          	#   Spring Boot TDD patterns
+│       ├── versioning-guide/        	#   Semantic versioning decisions
+│       └── vite-patterns/           	#   Vite build tool patterns
 │
 ├── .config/
-│   ├── Code/User/                    # VS Code user config
-│   │   ├── chatLanguageModels.json   #   Custom chat model providers
-│   │   ├── mcp.json                  #   MCP server definitions
-│   │   └── prompts/                  #   Custom agent prompts
-│   │       ├── build.prompt.md      #   Build command prompt
-│   │       ├── commit.prompt.md     #   Commit command prompt
-│   │       ├── global.instructions.md#   Global system prompt
-│   │       ├── image-descriptor.prompt.md # Image description prompt
-│   │       ├── refactor-clean.prompt.md # Refactor command prompt
-│   │       ├── review.agent.md      #   Code review agent
-│   │       ├── scan-security.prompt.md # Security scan prompt
-│   │       ├── ship.agent.md        #   Ship agent
-│   │       ├── test.agent.md        #   Test agent
-│   │       └── update-docs.prompt.md # Documentation sync prompt
+│   ├── Code/User/                    	    #   VS Code user config
+│   │   ├── chatLanguageModels.json   	   	#   Custom chat model providers
+│   │   ├── mcp.json                  	   	#   MCP server definitions
+│   │   └── prompts/                  	   	#   Custom agent prompts
+│   │       ├── build.prompt.md      	   	  #   Build command prompt
+│   │       ├── commit.prompt.md     	   	  #   Commit command prompt
+│   │       ├── global.instructions.md	   	#   Global system prompt
+│   │       ├── image-descriptor.prompt.md 	#   Image description prompt
+│   │       ├── refactor-clean.prompt.md   	#   Refactor command prompt
+│   │       ├── review.agent.md      	   	  #   Code review agent
+│   │       ├── scan-security.prompt.md    	#   Security scan prompt
+│   │       ├── ship.agent.md        	   	  #   Ship agent
+│   │       ├── test.agent.md        	   	  #   Test agent
+│   │       └── update-docs.prompt.md 	   	#   Documentation sync prompt
 │   │
-│   └── opencode/                     # Opencode configuration
-│       ├── opencode.jsonc            #   Main config (MCPs, plugins)
-│       ├── AGENTS.md                 #   Agent behavior rules
-│       ├── dcp.jsonc                 #   Dynamic Context Pruning config
-│       ├── tui.json                  #   TUI plugin config
-│       ├── package.json              #   Node dependencies
-│       ├── requirements.txt          #   Runtime requirements reference
-│       ├── .gitignore                #   Git ignore for this folder
-│       ├── agents/                   #   Opencode agent definitions
+│   └── opencode/                     	#   Opencode configuration
+│       ├── opencode.jsonc            	#   Main config (MCPs, plugins)
+│       ├── AGENTS.md                 	#   Agent behavior rules
+│       ├── dcp.jsonc                 	#   Dynamic Context Pruning config
+│       ├── tui.json                  	#   TUI plugin config
+│       ├── package.json              	#   Node dependencies
+│       ├── requirements.txt          	#   Runtime requirements reference
+│       ├── .gitignore                	#   Git ignore for this folder
+│       ├── agents/                   	#   Opencode agent definitions
 │       │   ├── ask.md
 │       │   ├── review.md
 │       │   ├── ship.md
 │       │   └── test.md
-│       └── commands/                 #   Opencode command definitions
-│           ├── build.md              #   Build command
-│           ├── commit.md             #   Git commit command (gitmoji)
-│           ├── image-descriptor.md   #   Image description command
-│           ├── refactor-clean.md     #   Dead code removal & consolidation
-│           ├── scan-security.md      #   OWASP security review
-│           └── update-docs.md        #   Documentation sync
+│       └── commands/                 	#   Opencode command definitions
+│           ├── build.md              	#   Build command
+│           ├── commit.md             	#   Git commit command (gitmoji)
+│           ├── image-descriptor.md   	#   Image description command
+│           ├── refactor-clean.md     	#   Dead code removal & consolidation
+│           ├── scan-security.md      	#   OWASP security review
+│           └── update-docs.md        	#   Documentation sync
 │
-├── ignores/                          # Ignore files per AI tool
-│   ├── .gitignore                    #   Git
-│   ├── .agentignore                  #   Generic AI agent
-│   ├── .aiderignore                  #   Aider
-│   ├── .copilotignore               #   GitHub Copilot
-│   ├── .cursorignore                #   Cursor IDE
-│   ├── .geminiignore                #   Gemini CLI
-│   └── .ignore                      #   Opencode (via opencode-ignore plugin)
+├── ignores/                          	#   Ignore files per AI tool
+│   ├── .gitignore                    	#   Git
+│   ├── .agentignore                  	#   Generic AI agent
+│   ├── .aiderignore                  	#   Aider
+│   ├── .copilotignore                	#   GitHub Copilot
+│   ├── .cursorignore                 	#   Cursor IDE
+│   ├── .geminiignore                 	#   Gemini CLI
+│   └── .ignore                       	#   Opencode (via opencode-ignore plugin)
 │
-├── install.ps1                       # Windows installer script
-├── install.sh                        # Linux/macOS installer script
+├── install.ps1                       	# 	Windows installer script
+├── install.sh                        	# 	Linux/macOS installer script
 │
-└── README.md                         # This file
+└── README.md
 ```
 
 </details>
@@ -397,7 +397,7 @@ Respects `.ignore` files to exclude files/directories from opencode's context, s
 | `.config/opencode/agents/`   | Opencode agent definitions    |
 | `.config/opencode/commands/` | Opencode command definitions  |
 | `.config/Code/User/prompts/` | VS Code custom agent prompts  |
-| `Ignores/`                   | Tool-specific ignore files    |
+| `ignores/`                   | Tool-specific ignore files    |
 
 ---
 
@@ -406,7 +406,7 @@ Respects `.ignore` files to exclude files/directories from opencode's context, s
 ```
 .agents/       → Shared across opencode, VS Code, Cursor, Gemini CLI, Aider, etc.
 .config/       → Tool-specific configurations (opencode, VS Code)
-Ignores/       → Pre-made ignore files for git and AI tools
+ignores/       → Pre-made ignore files for git and AI tools
 ```
 
 The `.agents/` folder is placed at the project root or user home and is consumed by multiple tools simultaneously — making skills and agent instructions reusable across your entire AI toolchain.
